@@ -1,6 +1,6 @@
 # Version Control with Git
 
-Execution steps of practical tasks Version Control with Git
+Practical tasks 
 
 ## I Can Win
 

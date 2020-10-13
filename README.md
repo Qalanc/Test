@@ -23,7 +23,7 @@ After initial settings create project and clone it to PC:
 ```bash
 git clone git@gitlab.com:maksym.karpov/online-python-external-program.git
 ```
-In project working directory, create folder named GIT and place there "song.txt" file containing first half of favourite song. Add created file to index, than made commit and push to the server:
+In project working directory, create the folder named GIT and place there "song.txt" file containing the first half of favourite song. Add created file to index, than made commit and push to the server:
 
 ```bash
 git add GIT/
@@ -33,7 +33,7 @@ git commit -m "add first half of my favorite song"
 git push
 ```
 
-With  GitLab web interface, add second half of text to "song.txt" file and clone remote repository to PC using command:
+With  GitLab web interface, add the second half of text to "song.txt" file and clone remote repository to PC using command:
 
 ```bash
 git pull

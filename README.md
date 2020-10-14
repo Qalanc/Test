@@ -100,7 +100,8 @@ Mearging "feature" branch into master raise conflict in `arrows.txt`, to solve t
 git merge feature
 CONFLICT (add/add): Merge conflict in GIT/arrows.txt
 Auto-merging GIT/arrows.txt
-Automatic merge failed; fix conflicts and then commit the result.```
+Automatic merge failed; fix conflicts and then commit the result.
+```
 
 ```bash
 git add GIT/

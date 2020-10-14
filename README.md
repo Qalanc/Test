@@ -38,3 +38,72 @@ With  GitLab web interface, add the second half of text to "song.txt" file and c
 ```bash
 git pull
 ```
+## Bring It On
+
+Add ".gitignore" file to project with the following instructions, that hiding files with extensions **.db**, **.log** and directory named **target**:
+
+```
+*.db
+*.log
+/target
+```
+
+Create "feature" branch and commit ".gitignore" two times with required extensions and directory:
+
+```bash
+git checkout -b feature
+
+git add GIT/
+
+git commit -m "created file .gitignore and configured hiding of files with extensions .db, .log"
+
+git add GIT/
+
+git commit -m "configured hiding directory with name target"
+```
+
+Merge "feature" branch into "master", previously switched to "master" branch:
+
+```bash
+git checkout master
+
+git merge feature
+```
+
+Return to "feature" branch:
+
+```bash
+git checkout feature
+```
+
+Create "arrows.txt" file and commit:
+
+```bash
+git add GIT/
+
+git commit -m "created file arrows.txt on feature branch and added 2 strings of song"
+```
+
+Go to `master` branch, create "arrows.txt" file and commit:
+
+```bash
+git checkout master
+
+git add GIT/
+
+git commit -m "created file arrows.txt on master branch and added 2 strings of song"
+```
+
+Mearging "feature" branch into master raise conflict in `arrows.txt`, to solve the conflict go to arrows.txt file in `master` branch and edit text in order previous steps. Edited file add to index and commit.
+
+```bash
+git merge feature
+CONFLICT (add/add): Merge conflict in GIT/arrows.txt
+Auto-merging GIT/arrows.txt
+Automatic merge failed; fix conflicts and then commit the result.```
+
+```bash
+git add GIT/
+
+git commit -m "solved merge conflict"
+```

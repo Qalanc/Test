@@ -207,4 +207,4 @@ Last practical task complete at the same way as previous four, but without using
   
   * `vi` to edit file
   
-  ![Альтернативный текст](https://github.com/Qalanc/Test/blob/main/vi.jpg)
+  ![Vi Editor](https://github.com/Qalanc/Test/blob/main/vi.jpg)

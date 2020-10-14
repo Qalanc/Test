@@ -109,3 +109,45 @@ $ git add GIT/
 
 $ git commit -m "solved merge conflict"
 ```
+
+## Hurt Me Plenty
+
+Create `storm` branch, `storm.txt` with two strings and commit file:
+
+```bash
+$ git checkout -b storm
+
+$ git add GIT/
+
+$ git commit -m "created storm.txt and added two strings"
+```
+
+Add two more strings to `storm.txt` file and commit:
+
+```bash
+$ git add GIT/
+
+$ git commit -m "added two more strings"
+```
+
+Switch to `master` branch, create `pursuit.txt` file with four strings, commit:
+
+```bash
+$ git add GIT/
+
+$ git commit -m "created file pircuit.txt and added four strings"
+```
+Mark the commit with the session1 tag and go to the `storm` branch:
+
+```bash
+$ git tag session1
+```
+
+To rebase the `storm` branch with the latest commit from `master`, switch to 'storm' and use Git commands:
+
+```bash
+$ git checkout storm
+
+$ git rebase master
+```
+

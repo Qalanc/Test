@@ -151,3 +151,34 @@ $ git checkout storm
 $ git rebase master
 ```
 
+## Hardcore
+
+* Synchronizing local project and remote using the Git command:
+
+```bash
+$ git push
+```
+* View of existing repository:
+
+```bash
+$ git remote -v
+
+origin  git@gitlab.com:maksym.karpov/online-python-external-program.git (fetch)
+origin  git@gitlab.com:maksym.karpov/online-python-external-program.git (push)
+```
+
+* Remove old project, create new and add it to origin:
+
+```bash
+$ git remote remove origin
+
+$ git remote add origin git@gitlab.com:maksym.karpov/online-python-external-program-for-git.git
+```
+
+* Push files from old project to new repository:
+
+```bash
+$ git push --set-upstream origin master
+```
+
+Old and new projects have tha same files/

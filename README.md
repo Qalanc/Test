@@ -41,7 +41,7 @@ $ git pull
 
 ## Bring It On
 
-Add `.gitignore` file to project with the following instructions, that hiding files with extensions **.db**, **.log** and directory named **target**:
+* Add `.gitignore` file to project with the following instructions, that hiding files with extensions **.db**, **.log** and directory named **target**:
 
 ```
 *.db
@@ -49,7 +49,7 @@ Add `.gitignore` file to project with the following instructions, that hiding fi
 /target
 ```
 
-Create `feature` branch and commit `.gitignore` file two times with required extensions and directory:
+* Create `feature` branch and commit `.gitignore` file two times with required extensions and directory:
 
 ```bash
 $ git checkout -b feature
@@ -63,7 +63,7 @@ $ git add GIT/
 $ git commit -m "configured hiding directory with name target"
 ```
 
-Merge `feature` branch into `master`, previously switched to `master` branch:
+* Merge `feature` branch into `master`, previously switched to `master` branch:
 
 ```bash
 $ git checkout master
@@ -71,13 +71,13 @@ $ git checkout master
 $ git merge feature
 ```
 
-Return to "feature" branch:
+* Return to "feature" branch:
 
 ```bash
 $ git checkout feature
 ```
 
-Create `arrows.txt` file and commit:
+* Create `arrows.txt` file and commit:
 
 ```bash
 $ git add GIT/
@@ -85,7 +85,7 @@ $ git add GIT/
 $ git commit -m "created file arrows.txt on feature branch and added 2 strings of song"
 ```
 
-Go to `master` branch, create `arrows.txt` file and commit:
+* Go to `master` branch, create `arrows.txt` file and commit:
 
 ```bash
 $ git checkout master
@@ -95,7 +95,7 @@ $ git add GIT/
 $ git commit -m "created file arrows.txt on master branch and added 2 strings of song"
 ```
 
-Mearging `feature` branch into master, raise conflict in `arrows.txt`, to solve the conflict go to arrows.txt file in `master` branch and edit text in order previous steps. Edited file add to index and commit.
+* Mearging `feature` branch into master, raise conflict in `arrows.txt`, to solve the conflict go to arrows.txt file in `master` branch and edit text in order previous steps. Edited file add to index and commit.
 
 ```bash
 $ git merge feature
@@ -112,7 +112,7 @@ $ git commit -m "solved merge conflict"
 
 ## Hurt Me Plenty
 
-Create `storm` branch, `storm.txt` with two strings and commit file:
+* Create `storm` branch, `storm.txt` with two strings and commit file:
 
 ```bash
 $ git checkout -b storm
@@ -122,7 +122,7 @@ $ git add GIT/
 $ git commit -m "created storm.txt and added two strings"
 ```
 
-Add two more strings to `storm.txt` file and commit:
+* Add two more strings to `storm.txt` file and commit:
 
 ```bash
 $ git add GIT/
@@ -130,20 +130,20 @@ $ git add GIT/
 $ git commit -m "added two more strings"
 ```
 
-Switch to `master` branch, create `pursuit.txt` file with four strings, commit:
+* Switch to `master` branch, create `pursuit.txt` file with four strings, commit:
 
 ```bash
 $ git add GIT/
 
 $ git commit -m "created file pircuit.txt and added four strings"
 ```
-Mark the commit with the session1 tag and go to the `storm` branch:
+* Mark the commit with the session1 tag and go to the `storm` branch:
 
 ```bash
 $ git tag session1
 ```
 
-To rebase the `storm` branch with the latest commit from `master`, switch to `storm` and use Git commands:
+* To rebase the `storm` branch with the latest commit from `master`, switch to `storm` and use Git commands:
 
 ```bash
 $ git checkout storm

@@ -43,11 +43,11 @@ $ git pull
 
 * Add `.gitignore` file to project with the following instructions, that hiding files with extensions **.db**, **.log** and directory named **target**:
 
-```
+~~~~
 *.db
 *.log
 /target
-```
+~~~~
 
 * Create `feature` branch and commit `.gitignore` file two times with required extensions and directory:
 
@@ -182,3 +182,28 @@ $ git push --set-upstream origin master
 ```
 
 Old and new projects have tha same files/
+
+## Nightmare!
+
+Last practical task complete at the same way as previous four, but without using text editors and file managers.
+
+* Use Unix commands:
+
+  * `cd` to change directory:
+
+  ```bash
+  $ cd GIT/
+  ```
+
+  * `cat` to view content of file:
+  
+  ```bash
+  $ cat pursuit.txt
+  The warming sun returns again
+  And melts away the snow
+  The sea is freed from icy chains
+  Winter is letting go
+  ```
+  
+  * `vi` to edit file
+  ![Альтернативный текст](https://habrastorage.org/getpro/habr/post_images/aa5/222/85a/aa522285a7fd7fd5f8c597050956d878.svg)

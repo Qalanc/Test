@@ -206,4 +206,4 @@ Last practical task complete at the same way as previous four, but without using
   ```
   
   * `vi` to edit file
-  ![Альтернативный текст](https://habrastorage.org/getpro/habr/post_images/aa5/222/85a/aa522285a7fd7fd5f8c597050956d878.svg)
+  ![Альтернативный текст](https://github.com/Qalanc/Test/blob/main/vi.jpg)

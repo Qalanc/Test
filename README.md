@@ -2,7 +2,7 @@
 
 ## Exercise 1
 
-1. Return the count of negative numbers ib next list [4, -9, 8, -11, 8]
+1. Return the count of negative numbers in next list [4, -9, 8, -11, 8]
 2. Note: do not use conditionals or loops
 
 * Create function that takes `list` and returns `int` data types. With method `repr()` return a canonical string representation of the object and using string method `str.count()` calculate negative values with minus sign:

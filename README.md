@@ -59,7 +59,7 @@ sentence = 'The reasonable man adapts himself to the world; the unreasonable one
            'world to himself'
 ```
 
-* Create two `list` objects. First object to work with suggested quote using `str` method `split` to turn it to the list, second object for adapting it:
+* Create two `list` objects. The first object represents the list of words, obtained by `str` method `split`, from the quote. The second object for adapting it:
 
 ```python
 list_words = sentence.split()
@@ -85,7 +85,7 @@ for i in range(0, len(list_words)):
         new_list.append(list_words[i])
 ```
 
-* Use `str` method to create string from the list and print it:
+* Use `str` method to `join` create string from the list and print it:
 
 ```python
 new_sentence = ' '.join(new_list)

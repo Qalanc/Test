@@ -1,210 +1,94 @@
-# Version Control with Git
+# Types and Values
 
-Practical tasks inlude the following steps: 
+## Exercise 1
 
-## I Can Win
+1. Return the count of negative numbers ib next list [4, -9, 8, -11, 8]
+2. Note: do not use conditionals or loops
 
-* Install Git using web-site [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and generate ssh keys using Git Bash:
+* Create function that takes `list` and returns `int` data types. With method `repr()` return a canonical string representation of the object and using string method `str.count()` calculate negative values with minus sign:
 
-```bash
-$ ssh-keygen -t rsa -C "maksym.karpov@nure.ua"
+```python
+def count_negatives(numbers: list) -> int:
+    numbers = repr(numbers)
+    return numbers.count('-')
 ```
 
-* Add public key into Gitlab profile settings and set up username and email:
+* Use to following construction to avoid executing of function when import module:
 
-```bash
-$ git config --global user.name "Maksym Karpov"
-
-$ git config --global user.email "maksym.karpov@nure.ua"
+```python
+if __name__ == '__main__':
+    input_numbers = [4, -9, 8, -11, 8]
+    print(f'There are {count_negatives(input_numbers)} negative numbers in list {input_numbers}')
 ```
 
-* After initial settings create project and clone it to PC:
+## Exercise 2
 
-```bash
-$ git clone git@gitlab.com:maksym.karpov/online-python-external-program.git
-```
-* In project working directory, create the folder named `GIT` and place there `song.txt` file containing the first half of favourite song. Add created file to index, than commit and push to the server:
+1. You have first 5 best players according API rankings. Set the first place player (at the front of the list) to last place and vice versa.
+2. players = ['Ashleigh Barty', 'Simona Halep', 'Naorni Osaka', 'Karolina Pliskova', 'Elina Svitolina']
 
-```bash
-$ git add GIT/
+* Define list of tennis players:
 
-$ git commit -m "add first half of my favorite song"
+```python
+tennis_players = ['Ashleigh Barty', 'Simona Halep', 'Naorni Osaka', 'Karolina Pliskova', 'Elina Svitolina']
+``` 
 
-$ git push
-```
+* Create function that takes `list` data types and returns it vice versa version. Thus, using slicing `players[::-1]` returns list with step `-1`:
 
-* With  GitLab web interface, add the second half of text to `song.txt` file and clone remote repository to PC using command:
-
-```bash
-$ git pull
+```python
+def change_position(players: list):
+    players = players[::-1]
+    print(players)
 ```
 
-## Bring It On
+* Call function to see the result:
 
-* Add `.gitignore` file to project with the following instructions, that hiding files with extensions **.db**, **.log** and directory named **target**:
-
-~~~~
-*.db
-*.log
-/target
-~~~~
-
-* Create `feature` branch and commit `.gitignore` file two times with required extensions and directory:
-
-```bash
-$ git checkout -b feature
-
-$ git add GIT/
-
-$ git commit -m "created file .gitignore and configured hiding of files with extensions .db, .log"
-
-$ git add GIT/
-
-$ git commit -m "configured hiding directory with name target"
+```python
+if __name__ == '__main__':
+    change_position(tennis_players)
 ```
 
-* Merge `feature` branch into `master`, previously switched to `master` branch:
+## Exercise 3
 
-```bash
-$ git checkout master
+1. Swap words "reasonable" and "unreasonable" in quote "The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself."
+2. Note. Do not use `<string>.replace()` function or similar.
 
-$ git merge feature
+* Define quote with `str` object:
+
+```python
+sentence = 'The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the ' \
+           'world to himself'
 ```
 
-* Return to "feature" branch:
+* Create two `list` objects. First object to work with suggested quote using `str` method `split` to turn it to the list, second object for adapting it:
 
-```bash
-$ git checkout feature
+```python
+list_words = sentence.split()
+new_list = list()
 ```
 
-* Create `arrows.txt` file and commit:
+* Operate with words to be changed using two `int` objects with required words indexes:
 
-```bash
-$ git add GIT/
-
-$ git commit -m "created file arrows.txt on feature branch and added 2 strings of song"
+```python
+reasonable = list_words.index('reasonable')
+unreasonable = list_words.index('unreasonable')
 ```
 
-* Go to `master` branch, create `arrows.txt` file and commit:
+* Create loop that going through the list quote words and write it to `new_list` variable using `list` method `list.append()`, except "reasonable" and "unreasonable" swapping words:
 
-```bash
-$ git checkout master
-
-$ git add GIT/
-
-$ git commit -m "created file arrows.txt on master branch and added 2 strings of song"
+```python
+for i in range(0, len(list_words)):
+    if i == reasonable:
+        new_list.append(list_words[unreasonable])
+    elif i == unreasonable:
+        new_list.append(list_words[reasonable])
+    else:
+        new_list.append(list_words[i])
 ```
 
-* Mearging `feature` branch into master, raise conflict in `arrows.txt`, to solve the conflict go to arrows.txt file in `master` branch and edit text in order previous steps. Edited file add to index and commit.
+* Use `str` method to create string from the list and print it:
 
-```bash
-$ git merge feature
-CONFLICT (add/add): Merge conflict in GIT/arrows.txt
-Auto-merging GIT/arrows.txt
-Automatic merge failed; fix conflicts and then commit the result.
+```python
+new_sentence = ' '.join(new_list)
+
+print(new_sentence)
 ```
-
-```bash
-$ git add GIT/
-
-$ git commit -m "solved merge conflict"
-```
-
-## Hurt Me Plenty
-
-* Create `storm` branch, `storm.txt` with two strings and commit file:
-
-```bash
-$ git checkout -b storm
-
-$ git add GIT/
-
-$ git commit -m "created storm.txt and added two strings"
-```
-
-* Add two more strings to `storm.txt` file and commit:
-
-```bash
-$ git add GIT/
-
-$ git commit -m "added two more strings"
-```
-
-* Switch to `master` branch, create `pursuit.txt` file with four strings, commit:
-
-```bash
-$ git add GIT/
-
-$ git commit -m "created file pircuit.txt and added four strings"
-```
-* Mark the commit with the session1 tag and go to the `storm` branch:
-
-```bash
-$ git tag session1
-```
-
-* To rebase the `storm` branch with the latest commit from `master`, switch to `storm` and use Git commands:
-
-```bash
-$ git checkout storm
-
-$ git rebase master
-```
-
-## Hardcore
-
-* Synchronizing local project and remote using the Git command:
-
-```bash
-$ git push
-```
-* View of existing repository:
-
-```bash
-$ git remote -v
-
-origin  git@gitlab.com:maksym.karpov/online-python-external-program.git (fetch)
-origin  git@gitlab.com:maksym.karpov/online-python-external-program.git (push)
-```
-
-* Remove old project, create new and add it to origin:
-
-```bash
-$ git remote remove origin
-
-$ git remote add origin git@gitlab.com:maksym.karpov/online-python-external-program-for-git.git
-```
-
-* Push files from old project to new repository:
-
-```bash
-$ git push --set-upstream origin master
-```
-
-Old and new projects have tha same files/
-
-## Nightmare!
-
-Last practical task complete at the same way as previous four, but without using text editors and file managers.
-
-* Use Unix commands:
-
-  * `cd` to change directory:
-
-  ```bash
-  $ cd GIT/
-  ```
-
-  * `cat` to view content of file:
-  
-  ```bash
-  $ cat pursuit.txt
-  The warming sun returns again
-  And melts away the snow
-  The sea is freed from icy chains
-  Winter is letting go
-  ```
-  
-  * `vi` to edit file
-  
-  ![Vi Editor](https://github.com/Qalanc/Test/blob/main/vi.jpg)

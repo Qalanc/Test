@@ -33,6 +33,8 @@ if __name__ == '__main__':
     print('Is point in shadow area:', validate_point(x, y))
 ```
 
+*Full Python code: [Task 1](https://gitlab.com/maksym.karpov/online-python-external-program/-/blob/master/Conditionals/hw_3_1.py)
+
 ## Task 2
 
 1. Write a program that prints the input number from 1 to 100. But for multiple of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
@@ -68,6 +70,7 @@ if __name__ == '__main__':
 
         print(fizz_buzz(num))
 ```
+* Full Python code: [Task 2](https://gitlab.com/maksym.karpov/online-python-external-program/-/blob/master/Conditionals/hw_3_2.py)
 
 ## Task 3
 
@@ -136,3 +139,5 @@ if __name__ == '__main__':
 
     print('Your result:', play(first_card, second_card))
 ```
+
+* Full Python code: [Task 2](https://gitlab.com/maksym.karpov/online-python-external-program/-/blob/master/Conditionals/hw_3_3.py)

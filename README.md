@@ -23,7 +23,7 @@ def validate_point(x_: float, y_: float) -> bool:
         return False
 ``` 
 
-* Create two variables to input coordinates and function to print the result:
+* Define two variables to input coordinates and print the result:
 
 
 ```python
@@ -60,7 +60,7 @@ else:
     return str(number)
 ```
 
-* Create variable to input number and function to print the result in an endless loop :
+* Define variable to input number and print the result in an endless loop :
 
 ```python
 if __name__ == '__main__':

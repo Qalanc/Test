@@ -1,94 +1,71 @@
-# Types and Values
+# Conditionals
 
-## Exercise 1
+## Task 1
 
-1. Return the count of negative numbers in next list [4, -9, 8, -11, 8]
-2. Note: do not use conditionals or loops
+1. Write a program that determines whether the Point A(x,y) is in the shaded area or not.
 
-* Create function that takes `list` and returns `int` data types. With method `repr()` return a canonical string representation of the object and using string method `str.count()` calculate negative values with minus sign:
+* Formulas for checking the occurrence of coordinates in a shaded area:
 
-```python
-def count_negatives(numbers: list) -> int:
-    numbers = repr(numbers)
-    return numbers.count('-')
-```
+`abs(x) == y`
 
-* Use to following construction to avoid executing of function when import module:
+`abs(x) < y`
+
+* Using formulas above create validating function with `if` and `else` conditions:
 
 ```python
-if __name__ == '__main__':
-    input_numbers = [4, -9, 8, -11, 8]
-    print(f'There are {count_negatives(input_numbers)} negative numbers in list {input_numbers}')
-```
-
-## Exercise 2
-
-1. You have first 5 best players according API rankings. Set the first place player (at the front of the list) to last place and vice versa.
-2. players = ['Ashleigh Barty', 'Simona Halep', 'Naorni Osaka', 'Karolina Pliskova', 'Elina Svitolina']
-
-* Define list of tennis players:
-
-```python
-tennis_players = ['Ashleigh Barty', 'Simona Halep', 'Naorni Osaka', 'Karolina Pliskova', 'Elina Svitolina']
+def validate_point(x_: float, y_: float) -> bool:
+    if -1 <= x_ <= 1 and 0 <= y_ <= 1:
+        if x_ <= y_:
+            return True
+        else:
+            return False
+    else:
+        return False
 ``` 
 
-* Create function that takes `list` data types and returns it vice versa version. Thus, using slicing `players[::-1]` returns list with step `-1`:
+* Create two variables to input coordinates and function to print the result:
 
-```python
-def change_position(players: list):
-    players = players[::-1]
-    print(players)
-```
-
-* Call function to see the result:
 
 ```python
 if __name__ == '__main__':
-    change_position(tennis_players)
+    x = abs(float(input('Enter x: ')))
+    y = float(input('Enter y: '))
+
+    print('Is point in shadow area:', validate_point(x, y))
 ```
 
-## Exercise 3
+## Task 2
 
-1. Swap words "reasonable" and "unreasonable" in quote "The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself."
-2. Note. Do not use `<string>.replace()` function or similar.
+1. Write a program that prints the input number from 1 to 100. But for multiple of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
 
-* Define quote with `str` object:
+* Create condition checking numbers in range from 1 to 100:
 
 ```python
-sentence = 'The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the ' \
-           'world to himself'
+if 1 <= num <= 100:
+    # your code here
+else:
+    return 'Out of range'
 ```
 
-* Create two `list` objects. The first object represents the list of words, obtained by `str` method `split`, from the quote. The second object for adapting it:
+* Insert into condition body validation of multiple 3 and 5 otherwise return number:
 
 ```python
-list_words = sentence.split()
-new_list = list()
+if number % 3 == 0 and number % 5 == 0:
+    return 'FizzBuzz'
+elif number % 3 == 0:
+    return 'Fizz'
+elif number % 5 == 0:
+    return 'Buzz'
+else:
+    return str(number)
 ```
 
-* Operate with words to be changed using two `int` objects with required words indexes:
+* Create variable to input number and function to print the result in an endless loop :
 
 ```python
-reasonable = list_words.index('reasonable')
-unreasonable = list_words.index('unreasonable')
-```
+if __name__ == '__main__':
+    while True:
+        num = int(input('Insert the number: '))
 
-* Create loop that going through the list quote words and write it to `new_list` variable using `list` method `list.append()`, except "reasonable" and "unreasonable" swapping words:
-
-```python
-for i in range(0, len(list_words)):
-    if i == reasonable:
-        new_list.append(list_words[unreasonable])
-    elif i == unreasonable:
-        new_list.append(list_words[reasonable])
-    else:
-        new_list.append(list_words[i])
-```
-
-* Use `str` method to `join` create string from the list and print it:
-
-```python
-new_sentence = ' '.join(new_list)
-
-print(new_sentence)
+        print(fizz_buzz(num))
 ```

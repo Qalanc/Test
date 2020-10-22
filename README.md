@@ -63,3 +63,72 @@ if __name__ == '__main__':
     print(f'Function fact({input_num}): {fact(input_num)}')
     print(f'Function factorial({input_num}): {factorial(input_num)}')
 ```
+
+## Fibonacci sequence
+
+* Function prints sequence of Fibonacci numbers by adding the last two numbers from the list:
+
+```python
+def fibonacci(num):
+    if num == 1:
+        print([0])
+
+    fib_list = [0, 1]
+
+    while len(fib_list) < num:
+        fib_list.append(fib_list[-2] + fib_list[-1])
+
+    print(fib_list)
+    print(sum(fib_list))
+```
+
+* Calculate series Fibonacci numbers by swapping variables:
+
+```python
+def fib(num):
+    if num == 1:
+        print([0])
+
+    f1 = 0
+    f2 = 1
+    counter = 2
+    fibonacci_list = [0, 1]
+
+    while counter < num:
+        f1, f2 = f2, f1 + f2
+        fibonacci_list.append(f2)
+        counter += 1
+
+    print(fibonacci_list)
+    print(sum(fibonacci_list))
+```
+
+Printing function outputs:
+
+```python
+if __name__ == '__main__':
+    input_num = int(input('Please, enter the number to calculate the fibonacci sequence: '))
+
+    print(f'\nFunction fibonacci({input_num}):')
+    fibonacci(input_num)
+
+    print(f'\nFunction fib({input_num}):')
+    fib(input_num)
+```
+
+## Binary representation
+
+* Assign `reverse_binary` variable string representation of remainder of the division by 2 and assignment of value from integer division `num` variable:
+
+```python
+while num >= 1:
+    reverse_binary += str(num % 2)
+    num //= 2
+```
+
+* Print binary representation of number and it sum:
+
+```python
+print('Number is ' + print_num + ', binary representation is ' + reverse_binary[::-1]
+      + ', sum is ' + str(reverse_binary.count('1')))
+```

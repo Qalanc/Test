@@ -1,134 +1,38 @@
-# Loops
+# Data Structures
 
-## Transpose a matrix
+## Task 1
 
-* The `while` loop allows to infinitely accept the entered values and to convert it to a nested list until the `exit` command is entered:
-
-```python
-while True:
-    matrix_input = input('Input: ').replace(' ', '')
-
-    if matrix_input == 'exit':
-        break
-
-    matrix_input = [list(matrix_input)]
-    matrix_list += matrix_input
-```
-
-* Next two `for` loops outputs nested list as original matrix and transposed ones:
+* `combine_dict(*args)` function retrieves changeable numbers of dictionary and sums the values of the same dictionary keys using a method `dict.get()` that accesses the dictionaries received by the function and dictionary created inside it; otherwise, it uses the dictionary method `dict.update()`:
 
 ```python
-print('\nOriginal matrix is:')
-for el_list in matrix_list:
-    print()
-    for el in range(0, len(el_list)):
-        print(el_list[el], end=' ')
-
-
-print('\n\nTransposed matrix is:')
-for y in range(0, len(matrix_list[0])):
-    print()
-    for i in range(0, len(matrix_list)):
-        print(matrix_list[i][y], end=' ')
+def combine_dicts(*args: dict) -> str:
+    comb_dict = {}
+    for dicts in args:
+        key_set = set(comb_dict.keys()) & set(dicts.keys())
+        if key_set:
+            for key_1 in key_set:
+                comb_dict.update({key_1: dicts.get(key_1) + comb_dict.get(key_1)})
+            key_set_1 = set(dicts.keys()) - key_set
+            for key_2 in key_set_1:
+                comb_dict.update({key_2: dicts.get(key_2)})
+        elif not key_set:
+            comb_dict.update(dicts)
+    return f'Modified dictionary with summarized values in case of identical keys:' \
+           f'\n{comb_dict}'
 ```
 
-## Factorial
-
-* Calculate factorial using recursive function until input number equals one:
-
-```python
-def fact(num):
-    if num == 1:
-        return 1
-    return num * fact(num - 1)
-```
-
-* The same program logic as in the function above, but using a `while` loop with `break` operator:
-
-```python
-def factorial(number):
-    counter = 1
-    while number > 1:
-        counter *= number
-        number -= 1
-    return counter
-```
-
-* Printing the results of functions in the current module:
-
-```python
-
-if __name__ == '__main__':
-    input_num = int(input('Please, enter the number to calculate the factorial: '))
-    print(f'Function fact({input_num}): {fact(input_num)}')
-    print(f'Function factorial({input_num}): {factorial(input_num)}')
-```
-
-## Fibonacci sequence
-
-* Function prints sequence of Fibonacci numbers by adding the last two numbers from the list:
-
-```python
-def fibonacci(num):
-    if num == 1:
-        print([0])
-
-    fib_list = [0, 1]
-
-    while len(fib_list) < num:
-        fib_list.append(fib_list[-2] + fib_list[-1])
-
-    print(fib_list)
-    print(sum(fib_list))
-```
-
-* Calculate series Fibonacci numbers by swapping variables:
-
-```python
-def fib(num):
-    if num == 1:
-        print([0])
-
-    f1 = 0
-    f2 = 1
-    counter = 2
-    fibonacci_list = [0, 1]
-
-    while counter < num:
-        f1, f2 = f2, f1 + f2
-        fibonacci_list.append(f2)
-        counter += 1
-
-    print(fibonacci_list)
-    print(sum(fibonacci_list))
-```
-
-Printing function outputs:
+* Function output:
 
 ```python
 if __name__ == '__main__':
-    input_num = int(input('Please, enter the number to calculate the fibonacci sequence: '))
+    dict_1 = {'a': 100, 'b': 200}
+    dict_2 = {'a': 200, 'b': 300}
+    dict_3 = {'a': 300, 'd': 100}
+    dict_4 = {'a': 300, 'e': 124, 'h': 13}
+    dict_5 = {'q': 11, 'p': 13}
+    dict_6 = {'p': 13}
+    print(combine_dicts(dict_1, dict_2, dict_3, dict_4, dict_5, dict_6))
 
-    print(f'\nFunction fibonacci({input_num}):')
-    fibonacci(input_num)
-
-    print(f'\nFunction fib({input_num}):')
-    fib(input_num)
-```
-
-## Binary representation
-
-* Assign `reverse_binary` variable string representation of remainder of the division by 2 and assignment of value from integer division `num` variable:
-
-```python
-while num >= 1:
-    reverse_binary += str(num % 2)
-    num //= 2
-```
-
-* Print binary representation of number and it sum:
-
-```python
-print('Number is ' + print_num + ', binary representation is ' + reverse_binary[::-1]
-      + ', sum is ' + str(reverse_binary.count('1')))
+>>> Modified dictionary with summarized values in case of identical keys:
+    {'a': 900, 'b': 500, 'd': 100, 'e': 124, 'h': 13, 'q': 11, 'p': 26}
 ```

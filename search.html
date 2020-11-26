@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Department App</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+	<nav class="navigation">
+		<ul>
+			<li><a href="index.html">Home</a></li><!--
+			--><li><a href="ls_dep.html">List of departments</a></li><!--
+	    	--><li><a href="ls_emp.html">List of employees</a></li><!--
+	    	--><li><a id="now" href="search.html">&#128269;</a></li>
+	  	</ul>
+	</nav>
+		<h1 class="logo">Department <span class="red">App</span></h1>
+	</header>
+	<section>
+		<form class="form-dob">
+			<label for="dob">Input employee DOB:</label>
+			<input type="date" name="dob" id="dob" required="">
+			<input type="submit" class="" name="">
+		</form>
+
+		<table>
+			<tr>
+			<th>Department</th>
+			<th>Employee</th>
+			<th>Salary</th>	
+		</tr>
+		<tr>
+			<td>Kharkiv department</td>
+			<td>Maksym Karpov</td>
+			<td>10000</td>
+		</tr>
+		</table>
+
+		<div class="wrapper">
+			<input type="checkbox" name="edit" id="edit">
+			<label for="edit" class="btn">Edit</label>
+			
+			<form class="popup">
+				<label for="department">New department:</label>
+				<input type="text" name="" id="department">
+				<label for="salary">New salary:</label>
+				<input type="text" name="" id="salary">
+				<input type="submit" class="btn">
+			</form>
+		</div>
+
+		<form class="form-dob">
+			<label for="period">Input employee DOB in the period between dates:</label><br>
+			<input type="date" name="period-1" id="period" required="">
+			<input type="date" name="period-2" id="period" required="">
+			<input type="submit" class="" name="">
+		</form>
+	</section>
+</body>
+</html>

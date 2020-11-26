@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  color: black;
+  font-size: 17px;
+  min-width: 1000px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 800px;
+  max-width: 1000px;
+  font-size: 25px;
+  text-align: center;
+  margin: 40px auto 30px auto;
+  color: black;
+}
+
+th, td {
+  padding: 30px 0;
+  border-bottom: 2px solid #0052CC;
+}
+
+td {
+  background-color: lightgrey;
+}
+
+th {
+  text-transform: uppercase;
+  background-color: #5CC5FF
+}
+
+img {
+  max-width: 1000px;
+  margin-top: 80px;
+}
+
+.logo {
+  padding-top: 40px;
+}
+
+.red {
+  color: #EB554D;
+}
+
+.navigation ul {
+  margin: 0;
+  padding-top: 50px;
+  float: right;
+}
+
+.navigation li {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.navigation a {
+  color: black;
+  font-weight: bold;
+  padding: 12px 35px;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: #EB554D;
+}
+
+.navigation li:first-child a {
+  color: #5CA0FF;
+}
+
+#now {
+  border-bottom: 2px solid #EB554D;
+}
+
+.form-dob {
+  padding-top: 60px;
+  font-size: 30px;
+  min-width: 800px;
+  max-width: 1000px;
+  font-size: 25px;
+  text-align: center;
+  margin: 40px auto 30px auto;
+}
+
+.form-dob input {
+  width: 205px;
+  color: darkcyan;
+  border: none;
+  padding: 15px 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-left: 30px; 
+
+}
+
+/* Delete */
+
+.wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: block;
+  width: 220px;
+  text-align: center;
+  background-color: lightgrey;
+  color: darkcyan;
+  padding: 15px 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.popup {
+  display: block;
+  background-color: #5CC5FF;
+  color: black;
+  padding: 30px;
+  position: relative;
+  font-size: 20px;
+  width: 50%;
+  margin: 20px auto 0 auto;
+  display: none;
+
+}
+
+.popup input {
+  display: block;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+#edit {
+  display: none;
+}
+
+#edit:checked ~ .popup {
+  display: block;
+}
+
+
+/* Delete above*/
